@@ -1,6 +1,13 @@
-/**
- * Universidad del Valle de Guatemala
- * Se crea la interfaz del stack
+
+ /**
+ * Universidad del Valle de Guatemala 
+ * Hoja de Trabajo 2
+ * Grupo 2
+ * Integrantes del grupo:
+ * Sofía Lam 21548
+ * Dáriel Villatoro
+ * Seongujun An 
+ *  Se crea la interfaz del stack
  */
 public interface Stack<E> {
     /**
