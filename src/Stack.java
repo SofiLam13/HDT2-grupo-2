@@ -1,13 +1,6 @@
-
- /**
- * Universidad del Valle de Guatemala 
- * Hoja de Trabajo 2
- * Grupo 2
- * Integrantes del grupo:
- * Sofía Lam 21548
- * Dáriel Villatoro
- * Seongujun An 
- *  Se crea la interfaz del stack
+/**
+ * Defines all the methods that a Stack should have.
+ * @param <E> Type of the items stored on the Stack. Example: String
  */
 public interface Stack<E> {
     /**

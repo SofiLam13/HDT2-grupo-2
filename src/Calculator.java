@@ -1,11 +1,4 @@
 /**
- * Universidad del Valle de Guatemala 
- * Hoja de Trabajo 2
- * Grupo 2
- * Integrantes del grupo:
- * Sofía Lam 21548
- * Dáriel Villatoro
- * Seongujun An 
  * Defines all the methods that a Calculator should have
  */
 public interface Calculator {
@@ -16,5 +9,3 @@ public interface Calculator {
      */
     public double calculate(String operation);
 }
-    
-
