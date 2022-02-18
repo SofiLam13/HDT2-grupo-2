@@ -10,6 +10,7 @@ public class MyStack implements Stack{
     private ArrayList Array;
 
     MyStack(ArrayList array){
+
         this.Array = array;
     }
 
@@ -19,6 +20,7 @@ public class MyStack implements Stack{
      */
     @Override
     public void add(Object item) {
+
         Array.add(item);
     }
 
