@@ -5,12 +5,11 @@
  *  Implements the stack interface to treat an Array as an stack. It contains generic values
  */
 import java.util.ArrayList;
-
+//ArrayList
 public class MyStack implements Stack{
     private ArrayList Array;
 
     MyStack(ArrayList array){
-
         this.Array = array;
     }
 
@@ -20,7 +19,6 @@ public class MyStack implements Stack{
      */
     @Override
     public void add(Object item) {
-
         Array.add(item);
     }
 

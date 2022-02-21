@@ -1,20 +1,28 @@
-public abstract class AbstractList<E>
-        implements List<E> {
-    public AbstractList()
-    // post: does nothing
-    {
+import java.util.Arrays;
+
+public abstract class AbstractList<E> implements List{
+    public AbstractList(){}
+
+    /**
+     * Return the size
+     * @return size
+     */
+    public int size(){
+        return size();
     }
 
-    public boolean isEmpty()
-    // post: returns true iff list has no elements
-    {
-        return size() == 0;
+    /**
+     * checks if the the size of the dinamic structure size is zero, size = 0, true, else false
+     * @return true if size = 0; else false
+     */
+    public boolean isEmpty(){
+        if(size() != 0){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
-    public boolean contains(E value)
-    // pre: value is not null
-    // post: returns true iff list contains an object equal to value
-    {
-        return -1 != indexOf(value);
-    }
+
 }

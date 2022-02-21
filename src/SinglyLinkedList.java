@@ -21,7 +21,9 @@ public int size()
 
     @Override
     public void clear() {
-
+    //this method clears the single linked list
+    head = null;
+    count = 0;
     }
 
     public void addFirst(E value)
@@ -37,10 +39,15 @@ public E removeFirst()
         // pre: list is not empty
         // post: removes and returns value from beginning of list
         {
-        Node<E> temp = head;
-        head = head.next(); // move head down list
-        count--;
-        return temp.value();
+        if(head != null){
+            Node<E> temp = head;
+            head = head.next(); // move head down list
+            count--;
+            return temp.value();
+        }
+        else{
+            return null;
+        }
         }
 
     @Override
@@ -72,7 +79,12 @@ public E removeFirst()
         // pre: list is not empty
         // post: returns first value in list
         {
-        return head.value();
+        if(head != null){
+            return head.value();
+        }
+        else{
+            return null;
+        }
         }
 
     @Override

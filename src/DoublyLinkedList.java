@@ -1,135 +1,132 @@
 import java.util.Iterator;
 
-public class DoublyLinkedList<E> extends AbstractList<E> {
-    protected int count;
-    protected DoublyLinkedNode<E> head;
-    protected DoublyLinkedNode<E> tail;
+public class DoublyLinkedList<E> extends AbstractList {
 
-    public DoublyLinkedList()
-// post: constructs an empty list
-    {
-        head = null;
-        tail = null;
-        count = 0;
-    }
+    protected  int list_size;
+    protected DoublyLinkedListNode head;
+    protected  DoublyLinkedListNode tail;
 
-
-    @Override
-    public int size() {
-        return 0;
+    public DoublyLinkedList(){
+        this.list_size = 0;
+        this.head = null;
+        this.tail = null;
     }
 
     @Override
-    public void clear() {
-
-    }
-
-    public void addFirst(E value)
-// pre: value is not null
-// post: adds element to head of list
-    {
-        // construct a new element, making it head
-        head = new DoublyLinkedNode<E>(value, head, null);
-        // fix tail, if necessary
-        if (tail == null) tail = head;
-        count++;
-    }
-
-
-    public void addLast(E value)
-// pre: value is not null
-// post: adds new value to tail of list
-    {
-        // construct new element
-        tail = new DoublyLinkedNode<E>(value, null, tail);
-        // fix up head
-        if (head == null) head = tail;
-        count++;
-    }
+    public void clear() {}
 
     @Override
-    public E getFirst() {
-        return null;
-    }
-
-    @Override
-    public E getLast() {
-        return null;
-    }
-
-    @Override
-    public E removeFirst() {
-        return null;
-    }
-
-
-    public E removeLast()
-// pre: list is not empty
-// post: removes value from tail of list
-    {
-        DoublyLinkedNode<E> temp = tail;
-        tail = tail.previous();
-        if (tail == null) {
-            head = null;
-        } else {
-            tail.setNext(null);
+    public void addFirst(Object value) {
+        if(value != null){
+         head = new DoublyLinkedListNode(value,head,tail);
+         if(tail == null){
+             tail = head;
+         }
         }
-        count--;
-        return temp.value();
+        list_size++;
     }
 
     @Override
-    public E remove(E value) {
+    public void addLast(Object value) {
+        if(value != null){
+            tail = new DoublyLinkedListNode(value,null,tail);
+            if(head == null){
+                head = tail;
+            }
+        }
+        list_size++;
+    }
+
+    @Override
+    public Object getFirst() {
         return null;
     }
 
     @Override
-    public void add(E value) {
-
-    }
-
-    @Override
-    public E remove() {
+    public Object getLast() {
         return null;
     }
 
     @Override
-    public E get() {
+    public Object removeFirst() {
         return null;
     }
 
     @Override
-    public int indexOf(E value) {
+    public E removeLast() {
+        if(list_size > 0){
+            DoublyLinkedListNode temp = tail;
+            tail = tail.Previous();
+            if(tail == null){
+                head = null;
+            }else{
+                tail.setNext(null);
+            }
+            list_size--;
+            return (E) temp.Value();
+        }
+        else{
+            return null;
+        }
+    }
+
+    @Override
+    public Object remove(Object value) {
+        return null;
+    }
+
+    @Override
+    public void add(Object value) {
+
+    }
+
+    @Override
+    public Object remove() {
+        return null;
+    }
+
+    @Override
+    public Object get() {
+        return null;
+    }
+
+    @Override
+    public boolean contains(Object value) {
+        return false;
+    }
+
+    @Override
+    public int indexOf(Object value) {
         return 0;
     }
 
     @Override
-    public int lastIndexOf(E value) {
+    public int lastIndexOf(Object value) {
         return 0;
     }
 
     @Override
-    public E get(int i) {
+    public Object get(int i) {
         return null;
     }
 
     @Override
-    public E set(int i, E o) {
+    public Object set(int i, Object o) {
         return null;
     }
 
     @Override
-    public void add(int i, E o) {
+    public void add(int i, Object o) {
 
     }
 
     @Override
-    public E remove(int i) {
+    public Object remove(int i) {
         return null;
     }
 
     @Override
-    public Iterator<E> iterator() {
+    public Iterator iterator() {
         return null;
     }
 }
