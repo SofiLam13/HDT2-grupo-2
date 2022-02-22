@@ -1,132 +1,35 @@
-import java.util.Iterator;
-
-public class DoublyLinkedList<E> extends AbstractList {
-
-    protected  int list_size;
-    protected DoublyLinkedListNode head;
-    protected  DoublyLinkedListNode tail;
+public class DoublyLinkedList<E> extends AbstractList<E> {
+    protected int count;
+    protected DoublyLinkedNode<E> head;
+    protected DoublyLinkedNode<E> tail;
 
     public DoublyLinkedList(){
-        this.list_size = 0;
-        this.head = null;
-        this.tail = null;
+        head = null;
+        tail = null;
+        count = 0;
     }
-
-    @Override
-    public void clear() {}
-
-    @Override
-    public void addFirst(Object value) {
-        if(value != null){
-         head = new DoublyLinkedListNode(value,head,tail);
-         if(tail == null){
-             tail = head;
-         }
+    public void addFirst(E value){
+        head = new DoublyLinkedNode<E>(value,head,null);
+        if(tail == null){
+            tail = head;
         }
-        list_size++;
+        count++;
     }
-
-    @Override
-    public void addLast(Object value) {
-        if(value != null){
-            tail = new DoublyLinkedListNode(value,null,tail);
-            if(head == null){
-                head = tail;
-            }
-        }
-        list_size++;
+    public void addLast(E value){
+        tail = new DoublyLinkedNode<E>(value,null,tail);
+        count++;
     }
-
-    @Override
-    public Object getFirst() {
-        return null;
-    }
-
-    @Override
-    public Object getLast() {
-        return null;
-    }
-
-    @Override
-    public Object removeFirst() {
-        return null;
-    }
-
-    @Override
-    public E removeLast() {
-        if(list_size > 0){
-            DoublyLinkedListNode temp = tail;
-            tail = tail.Previous();
-            if(tail == null){
-                head = null;
-            }else{
-                tail.setNext(null);
-            }
-            list_size--;
-            return (E) temp.Value();
-        }
-        else{
+    public E removeLast(){
+        if(!isEmpty()) {
+            System.out.println("La lista no esta vacia");
+            DoublyLinkedNode<E> temp = tail;
+            tail = tail.previous();
+            tail.setNext(null);
+            count--;
+            return  temp.value();
+        }else{
             return null;
         }
     }
 
-    @Override
-    public Object remove(Object value) {
-        return null;
-    }
-
-    @Override
-    public void add(Object value) {
-
-    }
-
-    @Override
-    public Object remove() {
-        return null;
-    }
-
-    @Override
-    public Object get() {
-        return null;
-    }
-
-    @Override
-    public boolean contains(Object value) {
-        return false;
-    }
-
-    @Override
-    public int indexOf(Object value) {
-        return 0;
-    }
-
-    @Override
-    public int lastIndexOf(Object value) {
-        return 0;
-    }
-
-    @Override
-    public Object get(int i) {
-        return null;
-    }
-
-    @Override
-    public Object set(int i, Object o) {
-        return null;
-    }
-
-    @Override
-    public void add(int i, Object o) {
-
-    }
-
-    @Override
-    public Object remove(int i) {
-        return null;
-    }
-
-    @Override
-    public Iterator iterator() {
-        return null;
-    }
 }

@@ -1,28 +1,92 @@
-import java.util.Arrays;
-
-public abstract class AbstractList<E> implements List{
+public abstract class AbstractList <E> implements  List<E> {
+    private List list;
     public AbstractList(){}
 
-    /**
-     * Return the size
-     * @return size
-     */
-    public int size(){
+    @Override
+    public int size() {
         return size();
     }
 
-    /**
-     * checks if the the size of the dinamic structure size is zero, size = 0, true, else false
-     * @return true if size = 0; else false
-     */
-    public boolean isEmpty(){
-        if(size() != 0){
-            return false;
+    @Override
+    public boolean isEmpty() {
+        if(size() == 0){
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
 
+    @Override
+    public void add(E value) {
+        list.add(value);
+    }
 
+    @Override
+    public void addLast(E value) {
+        list.addLast(value);
+    }
+
+    @Override
+    public void addFirst(E value) {
+        list.addFirst(value);
+    }
+
+    @Override
+    public E getFirst() {
+        if(list.size()>0){
+            E element = (E) list.getFirst();
+            return element;
+        }
+        else{
+            return null;
+        }
+    }
+
+    @Override
+    public E getLast() {
+        if(list.size() > 0){
+            E element = (E) list.getLast();
+            return element;
+        }else{
+            return null;
+        }
+    }
+
+    @Override
+    public E removeFirst() {
+        if(list.size() > 0){
+            E temp = (E) list.getFirst();
+            list.removeFirst();
+            return temp;
+        }
+        else{
+            return null;
+        }
+    }
+
+    @Override
+    public E removeLast() {
+        if(list.size() > 0){
+            E temp = (E) list.getLast();
+            list.removeLast();
+            return temp;
+        }
+        else{
+            return null;
+        }
+    }
+
+    @Override
+    public E remove(E value) {
+        Object val = (Object) value;
+        if(list.size() > 0 && list.equals(val)){
+            list.remove(val);
+            return value;
+        }
+        else{
+            return null;
+        }
+    }
 }
+

@@ -21,6 +21,7 @@ public interface Stack<E> {
      */
     public E peek();
 
+
     /**
      * Check if the Stack is empty.
      * @return Boolean indicating if the Stack is empty

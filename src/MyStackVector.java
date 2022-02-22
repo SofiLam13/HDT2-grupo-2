@@ -1,6 +1,6 @@
 import java.util.Vector;
 
-public class MyStackVector implements  Stack{
+public class MyStackVector<E> implements  Stack{
     private Vector vector;
 
     MyStackVector(Vector v){

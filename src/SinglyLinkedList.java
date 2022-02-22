@@ -1,165 +1,76 @@
-import java.util.Iterator;
+public class SinglyLinkedList<E> extends AbstractList<E> {
+    protected int count;
+    protected Node<E> head;
 
-public class SinglyLinkedList<E> extends AbstractList<E>
-{
-
-protected int count; // list size
-protected Node<E> head; // ref. to first element
-
-public SinglyLinkedList()
-        // post: generates an empty list
-        {
-        head = null;
+    public SinglyLinkedList(){
         count = 0;
-        }
-
-public int size()
-        // post: returns number of elements in list
-        {
-        return count;
-        }
-
-    @Override
-    public void clear() {
-    //this method clears the single linked list
-    head = null;
-    count = 0;
+        head = null;
     }
 
-    public void addFirst(E value)
-        // post: value is added to beginning of list
-        {
-        // note order that things happen:
-        // head is parameter, then assigned
-        head = new Node<E>(value, head);
-        count++;
+    public int Size(){
+        //post: return amount of elements in List
+        int elementcount = 0;
+        Node finger = head;
+        while(finger != null){
+            elementcount++;
+            finger = finger.next();
         }
+        return elementcount;
+    }
 
-public E removeFirst()
-        // pre: list is not empty
-        // post: removes and returns value from beginning of list
-        {
+    public void addFirst(E value){
+        head = new Node<E>(value,head);
+        count++;
+    }
+    public E removeFirst(){
+        Node<E> temp = head;
+        head = head.next();
+        count--;
+        return temp.value();
+    }
+    public E getFirst(){
+        return head.value();
+    }
+
+    public void addLast(E value){
+        Node<E> temp = new Node<E>(value, null);
         if(head != null){
-            Node<E> temp = head;
-            head = head.next(); // move head down list
+            Node<E> finger = head;
+            while(finger.next() != null){
+                finger = finger.next();
+            }
+            finger.setNext(temp);
+        }else{
+            head = temp;
+        }
+        count++;
+    }
+
+    public E removeLast()
+    //pre: list is not empty
+    //post: removes last value from list
+    {
+        Node<E> finger = head;
+        Node<E> previous = null;
+        if(head != null){
+            System.out.println("La lista no esta vacia");
+            while(finger.next() != null){
+                previous = finger;
+                finger = finger.next();
+            }
+            if(previous == null){
+                head = null;
+            }else{
+                previous.setNext(null);
+            }
             count--;
-            return temp.value();
+            return finger.value();
         }
         else{
             return null;
         }
-        }
-
-    @Override
-    public E removeLast() {
-        return null;
     }
 
-    @Override
-    public E remove(E value) {
-        return null;
-    }
-
-    @Override
-    public void add(E value) {
-
-    }
-
-    @Override
-    public E remove() {
-        return null;
-    }
-
-    @Override
-    public E get() {
-        return null;
-    }
-
-    public E getFirst()
-        // pre: list is not empty
-        // post: returns first value in list
-        {
-        if(head != null){
-            return head.value();
-        }
-        else{
-            return null;
-        }
-        }
-
-    @Override
-    public E getLast() {
-        return null;
-    }
-
-    public void addLast(E value)
-        // post: adds value to end of list
-        {
-        // location for new value
-        Node<E> temp = new Node<E>(value,null);
-        if (head != null)
-        {
-        // pointer to possible tail
-        Node<E> finger = head;
-        while (finger.next() != null)
-        {
-        finger = finger.next();
-        }
-
-        finger.setNext(temp);
-        } else head = temp;
-
-        count++;
-
-        }
 
 
-public boolean contains(E value)
-        // pre: value is not null
-        // post: returns true iff value is found in list
-        {
-        Node<E> finger = head;
-
-        while (finger != null &&
-        !finger.value().equals(value))
-        {
-        finger = finger.next();
-        }
-        return finger != null;
-        }
-
-    @Override
-    public int indexOf(E value) {
-        return 0;
-    }
-
-    @Override
-    public int lastIndexOf(E value) {
-        return 0;
-    }
-
-    @Override
-    public E get(int i) {
-        return null;
-    }
-
-    @Override
-    public E set(int i, E o) {
-        return null;
-    }
-
-    @Override
-    public void add(int i, E o) {
-
-    }
-
-    @Override
-    public E remove(int i) {
-        return null;
-    }
-
-    @Override
-    public Iterator<E> iterator() {
-        return null;
-    }
 }

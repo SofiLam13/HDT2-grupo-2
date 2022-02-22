@@ -1,39 +1,32 @@
-public class DoublyLinkedNode<E>
-{
+public class DoublyLinkedNode <E>{
     protected E data;
     protected DoublyLinkedNode<E> nextElement;
     protected DoublyLinkedNode<E> previousElement;
 
-    public DoublyLinkedNode(E v,
-                            DoublyLinkedNode<E> next,
-                            DoublyLinkedNode<E> previous)
-    {
+    public DoublyLinkedNode(E v,DoublyLinkedNode<E> next,DoublyLinkedNode<E> previous){
         data = v;
         nextElement = next;
-        if (nextElement != null)
+        if(nextElement != null){
             nextElement.previousElement = this;
+        }
         previousElement = previous;
-        if (previousElement != null)
+        if(previousElement != null){
             previousElement.nextElement = this;
+        }
     }
 
-    public DoublyLinkedNode(E v)
-// post: constructs a single element
-    {
+    public DoublyLinkedNode(E v){
         this(v,null,null);
     }
 
-    public DoublyLinkedNode<E> previous() {
-        //cambiar codigo, se agrego este metodo para que no hubieran conflictos con doubly linked list
-        return null;
+    public DoublyLinkedNode<E> previous(){
+        return previousElement;
+    }
+    public void setNext(DoublyLinkedNode<E> value){
+        nextElement = value;
     }
 
-    public void setNext(Object o) {
-        //cambiar codigo, se agrego este metodo para que no hubieran conflictos con doubly linked list
-    }
-
-    public E value() {
-        //cambiar codigo, se agrego este metodo para que no hubieran conflictos con doubly linked list
-        return null;
+    public E value(){
+        return data;
     }
 }
