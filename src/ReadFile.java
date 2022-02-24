@@ -4,10 +4,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ * class that reads file of a .txt and makes it a single string
+ */
 public class ReadFile {
     ReadFile(){}
 
+    /**
+     * reads file and return the file data into a string
+     * @return string (infix expresion)
+     */
     public String ReadDatostxt(){
         ArrayList<Object> Array = new ArrayList<>();
         String Infix_operation="";

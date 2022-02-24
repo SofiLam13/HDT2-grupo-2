@@ -1,3 +1,11 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @author Dariel Villatoro
+ *
+ * class that extends abstract stack
+ */
+
 import java.util.ArrayList;
 
 public class StackArrayList <E> extends AbstractStack{
@@ -7,13 +15,18 @@ public class StackArrayList <E> extends AbstractStack{
         array = new ArrayList<E>();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void add(Object item) {
     //post: item is appended to the arraylist
         E eItem = (E)item;
         array.add(eItem);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public E pop() {
         //pre: ArrayList not empty
@@ -24,7 +37,9 @@ public class StackArrayList <E> extends AbstractStack{
             return null;
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public E peek() {
         //pre: ArrayList not empty
@@ -35,7 +50,9 @@ public class StackArrayList <E> extends AbstractStack{
             return null;
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int size() {
         return  array.size();

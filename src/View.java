@@ -1,5 +1,10 @@
-import java.util.Scanner;
-
+/**
+ * @author pablo Herrera
+ * @author Sofia Lam
+ * @author Dariel Villatoro
+ *
+ * compiler class of the project
+ */
 public class View {
     public static void main(String[] args) {
         //program reads file to get the infix expresion

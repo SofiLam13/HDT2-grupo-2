@@ -1,3 +1,9 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @author Dariel Villatoro
+ */
+
 import java.util.Vector;
 
 public class StackVector<E> extends AbstractStack<E>{
@@ -6,13 +12,18 @@ public class StackVector<E> extends AbstractStack<E>{
     StackVector(){
         vector = new Vector<E>();
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void add(Object item) {
         //appends element to the vector
         E eItem = (E)item;
         vector.add(eItem);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public E pop() {
         //pre: vector is not empty
@@ -25,7 +36,9 @@ public class StackVector<E> extends AbstractStack<E>{
             return null;
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public E peek() {
         //pre: vector is not empty
@@ -36,7 +49,9 @@ public class StackVector<E> extends AbstractStack<E>{
             return null;
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int size() {
         return vector.size();

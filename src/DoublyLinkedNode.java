@@ -1,3 +1,10 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * Node for double linked list
+ */
 public class DoublyLinkedNode<E>{
     protected E data;
     protected DoublyLinkedNode<E> nextElement;

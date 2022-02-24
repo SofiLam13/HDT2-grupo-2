@@ -1,3 +1,10 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * Node for linked lists
+ */
 public class Node<E> {
     protected E data; //value stored in this element
     protected Node<E> nextElement; // reference to next element

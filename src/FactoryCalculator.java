@@ -1,6 +1,18 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * factory desing pattern for calculator, it makes sure to implement a calculator type ACalculator, depending on what the user's entry
+ */
 public class FactoryCalculator<E> {
     FactoryCalculator(){}
 
+    /**
+     * gets ACalculator to be implemented
+     * @param i user's entry, it chooses the type of implementation it wants
+     * @return calculator type ACalculator, can be an ArrayList, vector, linked list or doubly linked list
+     */
     public ACalculator getCalculator(int i){
         ACalculator calculator = null;
         switch (i){

@@ -1,3 +1,9 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ */
 public class InToPostfix {
     private Stack theStack;
     private String input;

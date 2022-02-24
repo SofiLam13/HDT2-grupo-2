@@ -1,3 +1,10 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * doubly linked list, implements abstract AbstractList
+ */
 public class DoublyLinkedList<E> extends AbstractList<E>{
     DoublyLinkedNode<E> head;
     DoublyLinkedNode<E> tail;
@@ -7,6 +14,10 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
         tail = new DoublyLinkedNode<E>(null,head);
         head.nextElement = tail;
     }
+
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public void add(E value) {
         if(value == null){
@@ -19,7 +30,9 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
             this.size++;
         }
     }
-
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public E remove(int i) {
         if(i < 0 || i >= size()){
@@ -41,6 +54,9 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
             return value;
         }
     }
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public E get(int i) {
         if(i < 0 || i > size()){
@@ -54,7 +70,9 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
             return actual_node.nextElement.data;
         }
     }
-
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public E removeLast() {
         if(size() == 0){
@@ -67,7 +85,9 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
             return last_element.data;
         }
     }
-
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public E peek() {
         if(size() == 0){

@@ -1,9 +1,19 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * calculator that uses linked lists to evaluate the postfix expresion
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 
 public class CalculadoraSingleLinkedList<E> implements ACalculator{
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public double calculate(String postfix_expresion) {
         String[] operacion = postfix_expresion.split("");

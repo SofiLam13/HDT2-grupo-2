@@ -1,8 +1,18 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * calculator that uses arraylists to evaluate the postfix expresion
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class CalculadoraArrayStack<E> implements ACalculator {
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public double calculate(String postfix_expresion) {
         String[] operacion = postfix_expresion.split("");

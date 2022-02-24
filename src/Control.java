@@ -1,10 +1,20 @@
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * class that has the outputs to show the user
+ */
 import java.util.Scanner;
 
 public class Control {
     Scanner scanner = new Scanner(System.in);
     Control(){}
 
-    //menu calc
+    /**
+     * first menu, asks the user what type of implementation whants to use
+     * @return integer that represents the user's choice
+     */
     public int ImplementationType() {
         System.out.println("Bienvenido, por favor ingrese una forma para evaluar su expresion matematica");
         System.out.println("1.Arreglos");
@@ -33,6 +43,10 @@ public class Control {
         return Op;
     }
 
+    /**
+     * if user wants to use lists to evaluate postfix expression, this method takes care to see what kind of list does it wants
+     * @return integer that represents user's choice
+     */
     public static int choose_list(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Escoge un tipo de lista que desees emplear");
@@ -57,9 +71,6 @@ public class Control {
             }
         }while(val == false);
         return option;
-    }
-    public void singleton(){
-        System.out.println("No se permite mas de una instancia para las calculadoras");
     }
 
 }

@@ -1,6 +1,11 @@
-import java.util.LinkedList;
-
-public class SingleLinkedList <E>{
+/**
+ * @author Pablo Herrera
+ * @author Sofia Lam
+ * @Dariel Villatoro
+ *
+ * single linked list extends abastract lists
+ */
+public class SingleLinkedList <E> extends AbstractList<E> {
     Node<E> head;
     int size;
 
@@ -9,6 +14,11 @@ public class SingleLinkedList <E>{
         head = new Node<E>(null);
         size = 0;
     }
+
+    /**
+     *{@inheritDoc}
+     */
+    @Override
     public void add(E item){
         if(item == null){
             throw new NullPointerException();
@@ -22,7 +32,10 @@ public class SingleLinkedList <E>{
             this.size++;
         }
     }
-
+    /**
+     *{@inheritDoc}
+     */
+    @Override
     public E remove(int index){
         Node<E> actual_node = head;
         if(index < 0 || index >= size){
@@ -37,7 +50,10 @@ public class SingleLinkedList <E>{
             return temporal.data;
         }
     }
-
+    /**
+     *{@inheritDoc}
+     */
+    @Override
     public E get(int index){
         if(index<0 || index>=size){
             throw new ArrayIndexOutOfBoundsException();
@@ -49,11 +65,18 @@ public class SingleLinkedList <E>{
             return actual_node.nextElement.data;
         }
     }
-
+    /**
+     *{@inheritDoc}
+     */
+    @Override
     public E removeLast(){
         int index = size-1;
         return remove(index);
     }
+    /**
+     *{@inheritDoc}
+     */
+    @Override
     public E peek(){
         int index = size-1;
         return get(index);
