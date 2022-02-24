@@ -20,6 +20,8 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
      */
     @Override
     public void add(E value) {
+        //pre: value is not null
+        //post:adds value to structure data
         if(value == null){
             throw new NullPointerException();
         }else{
@@ -35,6 +37,8 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
      */
     @Override
     public E remove(int i) {
+        //pre: index is not greater or equal than size, and index is greater than 0
+        //post:shows and removes element at index i
         if(i < 0 || i >= size()){
             throw new ArrayIndexOutOfBoundsException();
         }
@@ -59,6 +63,8 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
      */
     @Override
     public E get(int i) {
+        //pre: index is not greater or equal than size, and index is greater than 0
+        //post:shows element at index i
         if(i < 0 || i > size()){
             throw new ArrayIndexOutOfBoundsException();
         }
@@ -75,6 +81,8 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
      */
     @Override
     public E removeLast() {
+        //pre: list is not empty
+        //post: shows and removes last element at list
         if(size() == 0){
             throw new NullPointerException();
         }else{
@@ -90,6 +98,8 @@ public class DoublyLinkedList<E> extends AbstractList<E>{
      */
     @Override
     public E peek() {
+        //pre: list is not empty
+        //post: shows las element
         if(size() == 0){
             throw new NullPointerException();
         }else{

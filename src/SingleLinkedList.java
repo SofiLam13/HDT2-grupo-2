@@ -20,6 +20,8 @@ public class SingleLinkedList <E> extends AbstractList<E> {
      */
     @Override
     public void add(E item){
+        //pre: item is not null
+        //post: appends item to list
         if(item == null){
             throw new NullPointerException();
         }
@@ -37,6 +39,8 @@ public class SingleLinkedList <E> extends AbstractList<E> {
      */
     @Override
     public E remove(int index){
+        //pre: index is greater than 0 and less than size
+        //post: shows and removes last element at list
         Node<E> actual_node = head;
         if(index < 0 || index >= size){
             throw new ArrayIndexOutOfBoundsException();
@@ -55,6 +59,8 @@ public class SingleLinkedList <E> extends AbstractList<E> {
      */
     @Override
     public E get(int index){
+        //pre: index is greater than 0 and less than size
+        //post: shows last element at list
         if(index<0 || index>=size){
             throw new ArrayIndexOutOfBoundsException();
         }else{
@@ -70,6 +76,7 @@ public class SingleLinkedList <E> extends AbstractList<E> {
      */
     @Override
     public E removeLast(){
+        //post: removes last element at list
         int index = size-1;
         return remove(index);
     }
@@ -78,6 +85,7 @@ public class SingleLinkedList <E> extends AbstractList<E> {
      */
     @Override
     public E peek(){
+        //post: shows last element at list
         int index = size-1;
         return get(index);
     }
