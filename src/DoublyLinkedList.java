@@ -1,34 +1,79 @@
-public class DoublyLinkedList<E> extends AbstractList<E> {
-    protected int count;
-    protected DoublyLinkedNode<E> head;
-    protected DoublyLinkedNode<E> tail;
+public class DoublyLinkedList<E> extends AbstractList<E>{
+    DoublyLinkedNode<E> head;
+    DoublyLinkedNode<E> tail;
 
     public DoublyLinkedList(){
-        head = null;
-        tail = null;
-        count = 0;
+        head = new DoublyLinkedNode<E>(null);
+        tail = new DoublyLinkedNode<E>(null,head);
+        head.nextElement = tail;
     }
-    public void addFirst(E value){
-        head = new DoublyLinkedNode<E>(value,head,null);
-        if(tail == null){
-            tail = head;
-        }
-        count++;
-    }
-    public void addLast(E value){
-        tail = new DoublyLinkedNode<E>(value,null,tail);
-        count++;
-    }
-    public E removeLast(){
-        if(!isEmpty()) {
-            System.out.println("La lista no esta vacia");
-            DoublyLinkedNode<E> temp = tail;
-            tail = tail.previous();
-            tail.setNext(null);
-            count--;
-            return  temp.value();
+    @Override
+    public void add(E value) {
+        if(value == null){
+            throw new NullPointerException();
         }else{
-            return null;
+            DoublyLinkedNode<E> last_element = tail.previousElement;
+            DoublyLinkedNode<E> temporal = new DoublyLinkedNode<E>(value,last_element,tail);
+            tail.previousElement = temporal;
+            last_element.nextElement = temporal;
+            this.size++;
+        }
+    }
+
+    @Override
+    public E remove(int i) {
+        if(i < 0 || i >= size()){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
+            if(i == size-1){
+                return removeLast();
+            }
+            DoublyLinkedNode<E> actual_node = head;
+            for(int n = 0;n<i;n++){
+                actual_node = actual_node.nextElement;
+            }
+            DoublyLinkedNode<E> temporal = actual_node.nextElement;
+            E value = temporal.data;
+            actual_node.nextElement = temporal.nextElement;
+            temporal.nextElement.previousElement = actual_node;
+            this.size--;
+            return value;
+        }
+    }
+    @Override
+    public E get(int i) {
+        if(i < 0 || i > size()){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
+            DoublyLinkedNode<E> actual_node = head;
+            for(int n = 0;n<i;n++){
+                actual_node = actual_node.nextElement;
+            }
+            return actual_node.nextElement.data;
+        }
+    }
+
+    @Override
+    public E removeLast() {
+        if(size() == 0){
+            throw new NullPointerException();
+        }else{
+            DoublyLinkedNode<E> last_element = tail.previousElement;
+            last_element.previousElement.nextElement = tail;
+            tail.previousElement = last_element.previousElement;
+            this.size--;
+            return last_element.data;
+        }
+    }
+
+    @Override
+    public E peek() {
+        if(size() == 0){
+            throw new NullPointerException();
+        }else{
+            return tail.previousElement.data;
         }
     }
 

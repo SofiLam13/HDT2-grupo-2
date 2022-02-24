@@ -1,32 +1,17 @@
-public class DoublyLinkedNode <E>{
+public class DoublyLinkedNode<E>{
     protected E data;
     protected DoublyLinkedNode<E> nextElement;
     protected DoublyLinkedNode<E> previousElement;
 
-    public DoublyLinkedNode(E v,DoublyLinkedNode<E> next,DoublyLinkedNode<E> previous){
+    DoublyLinkedNode(E v){
         data = v;
+    }
+    DoublyLinkedNode(E v,DoublyLinkedNode<E> prev){
+        this(v);
+        previousElement = prev;
+    }
+    DoublyLinkedNode(E v,DoublyLinkedNode<E> prev,DoublyLinkedNode<E> next){
+        this(v,prev);
         nextElement = next;
-        if(nextElement != null){
-            nextElement.previousElement = this;
-        }
-        previousElement = previous;
-        if(previousElement != null){
-            previousElement.nextElement = this;
-        }
-    }
-
-    public DoublyLinkedNode(E v){
-        this(v,null,null);
-    }
-
-    public DoublyLinkedNode<E> previous(){
-        return previousElement;
-    }
-    public void setNext(DoublyLinkedNode<E> value){
-        nextElement = value;
-    }
-
-    public E value(){
-        return data;
     }
 }
